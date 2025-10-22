@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.SeansYonetimController"
+      spacing="15.0" prefHeight="600.0" prefWidth="800.0">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Yeni Seans Ekle" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Film Seç:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbFilmler" prefWidth="200.0" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Salon Seç:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbSalonlar" prefWidth="200.0" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Tarih Seç:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpTarih" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Saat (SS:DD):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtSaat" promptText="Örn: 14:30" maxWidth="100.0" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Button fx:id="btnSeansEkle" text="Yeni Seansı Kaydet" onAction="#handleSeansEkle"
+                GridPane.rowIndex="4" GridPane.columnIndex="1"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+    </GridPane>
+
+    <Label text="Mevcut Seanslar" style="-fx-font-size: 18px; -fx-font-weight: bold; margin-top: 20px;"/>
+
+    <TableView fx:id="seansTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colSeansFilm" prefWidth="250.0" text="Film Adı"/>
+            <TableColumn fx:id="colSeansSalon" prefWidth="150.0" text="Salon"/>
+            <TableColumn fx:id="colSeansTarih" prefWidth="200.0" text="Tarih ve Saat"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <Button fx:id="btnSeansSil" text="Seçili Seansı Sil" onAction="#handleSeansSil"
+                style="-fx-text-fill: red;"/>
+    </HBox>
+</VBox>

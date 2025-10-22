@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.BiletRaporController"
+      spacing="10.0" prefHeight="600.0" prefWidth="800.0">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Satılan Bilet Raporu" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="biletTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colBiletId" prefWidth="50.0" text="ID"/>
+            <TableColumn fx:id="colFilmAdi" prefWidth="150.0" text="Film Adı"/>
+            <TableColumn fx:id="colSalonAdi" prefWidth="100.0" text="Salon"/>
+            <TableColumn fx:id="colSeansTarihSaat" prefWidth="150.0" text="Seans Tarihi"/>
+            <TableColumn fx:id="colKoltukNo" prefWidth="80.0" text="Koltuk"/>
+            <TableColumn fx:id="colMusteriAdi" prefWidth="150.0" text="Müşteri Adı"/>
+        </columns>
+        <placeholder>
+            <Label text="Satılmış bilet bulunamadı."/>
+        </placeholder>
+    </TableView>
+
+</VBox>
