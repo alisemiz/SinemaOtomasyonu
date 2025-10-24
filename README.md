@@ -47,7 +47,6 @@ Bu proje, JavaFX ve SQLite kullanılarak geliştirilmiş bir masaüstü sinema o
     * **Admin:** Kullanıcı Adı: `admin`, Şifre: `admin`
     * **Kullanıcı:** Kullanıcı Adı: `user`, Şifre: `user`
 
-## 📸 Ekran Görüntüleri
 
 
 
